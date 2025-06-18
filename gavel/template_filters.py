@@ -2,7 +2,6 @@ from gavel import app
 from humanize import naturaltime
 import markdown
 import html
-from markupsafe import Markup
 
 @app.template_filter('utcdatetime_local')
 def _jinja2_filter_datetime_local(datetime):
@@ -25,5 +24,4 @@ def _jinja2_filter_markdown(text):
     # Convert markdown to HTML
     md = markdown.Markdown(extensions=['nl2br'])
     html_output = md.convert(escaped_text)
-    # Return as safe markup to prevent double-escaping
-    return Markup(html_output)
+    return html_output
