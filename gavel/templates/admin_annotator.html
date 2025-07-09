@@ -21,7 +21,7 @@
       </tr>
       <tr>
         <th>Description</th>
-        <td>{{ annotator.description }}</td>
+        <td>{{ annotator.description | markdown | safe }}</td>
       </tr>
       <tr>
         <th>Login URL</th>
